@@ -77,6 +77,7 @@ async def on_message(message: discord.Message):
     if message.author == client.user:
         return
     if message.content.lower().startswith(INVOKE_NAME) or random_chance(message):
+        await message.channel.trigger_typing()
         prompt = cleanup_prompt(message.content)
         svar = await prompt_ai(prompt)
         await message.channel.send(svar.lstrip("\"").rstrip("\""), reference=message)
