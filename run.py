@@ -17,8 +17,8 @@ intents = discord.Intents.default()
 intents.message_content = True
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
-
-INVOKE_NAME = "piirka"
+MODEL = os.getenv("MODEL_NAME", "jysses2")
+INVOKE_NAME = os.getenv("INVOKE_NAME")
 
 
 def cleanup_prompt(prompt: str) -> str:
@@ -34,6 +34,7 @@ def random_chance(message: discord.Message) -> bool:
         return False
     return random.random() < (1.0 / 100.0)
 
+SVENSK_REPLACE = ["fan", "helvete", "jävlar", "satan", "din jävel", "fan i helvete"]
 
 REPLACE = {
     "*grumbles*": ":unamused:",
@@ -66,6 +67,9 @@ REPLACE = {
 
 
 def discord_format(text: str) -> str:
+    if MODEL == "jysses2":
+        text.replace("*curses*", random.choice(SVENSK_REPLACE))
+
     for i, o in REPLACE.items():
         text = text.replace(i, o)
     return text
@@ -73,7 +77,7 @@ def discord_format(text: str) -> str:
 
 async def prompt_ai(prompt: str) -> str:
     body = {
-        "model": "jysses2",
+        "model": MODEL,
         "prompt": prompt,
         "stream": False
     }
