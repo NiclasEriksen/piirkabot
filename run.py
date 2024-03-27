@@ -57,10 +57,11 @@ REPLACE = {
     "*wink*": ":wink:",
     "*nods*": ":thumbsup:",
     "*smiles*": ":smile:",
+    "*smile*": ":smile:",
     "*blinks innocently*": ":blush:",
     "*shrugs*": ":man_shrugging:",
     "*yawns*": ":yawning_face:",
-    "*coughs*": ":face_with_open_eyes_and_hand_over_mouth"
+    "*coughs*": ":face_with_open_eyes_and_hand_over_mouth:"
 }
 
 
