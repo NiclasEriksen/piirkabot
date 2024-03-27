@@ -45,7 +45,8 @@ REPLACE = {
     "*Curses*": ":face_with_symbols_over_mouth:",
     "*curse*": ":face_with_symbols_over_mouth:",
     "*swear*": ":face_with_symbols_over_mouth:",
-    "*rolls eyes*": ":rolling_eyes:"
+    "*rolls eyes*": ":rolling_eyes:",
+    "*giggles*": ":sweat_smile:"
 }
 
 
