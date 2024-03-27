@@ -46,9 +46,21 @@ REPLACE = {
     "*curse*": ":face_with_symbols_over_mouth:",
     "*swear*": ":face_with_symbols_over_mouth:",
     "*rolls eyes*": ":rolling_eyes:",
+    "*eye-rolling*": ":rolling_eyes:",
+    "*exaggerated roll of eyes*": ":rolling_eyes:",
     "*giggles*": ":sweat_smile:",
+    "*laughs awkwardly*": ":sweat_smile:",
+    "*chuckles*": ":sweat_smile:",
     "*muttering under breath*": ":angry:",
-    "*grumbles and shakes head*": ":face_exhaling:"
+    "*mutters under breath*": ":angry:",
+    "*grumbles and shakes head*": ":face_exhaling:",
+    "*wink*": ":wink:",
+    "*nods*": ":thumbsup:",
+    "*smiles*": ":smile:",
+    "*blinks innocently*": ":blush:",
+    "*shrugs*": ":man_shrugging:",
+    "*yawns*": ":yawning_face:",
+    "*coughs*": ":face_with_open_eyes_and_hand_over_mouth"
 }
 
 
