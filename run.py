@@ -1,6 +1,7 @@
 import json
 import os
 import requests
+import random
 import asyncio
 from datetime import datetime, timedelta
 from typing import Union
@@ -26,6 +27,12 @@ def cleanup_prompt(prompt: str) -> str:
         prompt = prompt.replace(v, "")
     prompt = prompt.lstrip(",").lstrip(".").lstrip()
     return prompt
+
+
+def random_chance(message: discord.Message) -> bool:
+    if len(message.content) < 10:
+        return False
+    return random.random() < (1.0 / 100.0)
 
 
 async def prompt_ai(prompt: str) -> str:
@@ -69,7 +76,7 @@ async def on_ready():
 async def on_message(message: discord.Message):
     if message.author == client.user:
         return
-    if message.content.lower().startswith(INVOKE_NAME):
+    if message.content.lower().startswith(INVOKE_NAME) or random_chance(message):
         prompt = cleanup_prompt(message.content)
         svar = await prompt_ai(prompt)
         await message.channel.send(svar.lstrip("\"").rstrip("\""))
