@@ -7,6 +7,7 @@
     <list default="true" id="93b83db7-87e9-408e-9778-a6aa2829788b" name="Changes" comment="">
       <change afterPath="$PROJECT_DIR$/commands.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Modelfile" beforeDir="false" afterPath="$PROJECT_DIR$/Modelfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/run.py" beforeDir="false" afterPath="$PROJECT_DIR$/run.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
