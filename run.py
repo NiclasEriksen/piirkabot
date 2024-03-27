@@ -79,7 +79,7 @@ async def on_message(message: discord.Message):
     if message.content.lower().startswith(INVOKE_NAME) or random_chance(message):
         prompt = cleanup_prompt(message.content)
         svar = await prompt_ai(prompt)
-        await message.channel.send(svar.lstrip("\"").rstrip("\""))
+        await message.channel.send(svar.lstrip("\"").rstrip("\""), reference=message)
 
 #
 # async def main():
