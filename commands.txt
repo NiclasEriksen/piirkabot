@@ -1,0 +1,1 @@
+ollama create jysses2 -f ./Modelfile
