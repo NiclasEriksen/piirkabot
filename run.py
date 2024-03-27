@@ -35,6 +35,26 @@ def random_chance(message: discord.Message) -> bool:
     return random.random() < (1.0 / 100.0)
 
 
+REPLACE = {
+    "*grumbles*": ":unamused:",
+    "*grumble*": ":unamused:",
+    "*grumble grumble*": ":unamused:",
+    "*sigh*": ":face_exhaling:",
+    "*frustrated face*": ":triumph:",
+    "*curses*": ":face_with_symbols_over_mouth:",
+    "*Curses*": ":face_with_symbols_over_mouth:",
+    "*curse*": ":face_with_symbols_over_mouth:",
+    "*swear*": ":face_with_symbols_over_mouth:",
+    "*rolls eyes*": ":rolling_eyes:"
+}
+
+
+def discord_format(text: str) -> str:
+    for i, o in REPLACE.items():
+        text = text.replace(i, o)
+    return text
+
+
 async def prompt_ai(prompt: str) -> str:
     body = {
         "model": "jysses2",
@@ -45,7 +65,7 @@ async def prompt_ai(prompt: str) -> str:
     result = requests.post("http://127.0.0.1:11434/api/generate", data=json.dumps(body), headers=headers)
     data = json.loads(result.content)
     if "response" in data:
-        return data["response"]
+        return discord_format(data["response"])
     return "Ingen svar..."
 
 
